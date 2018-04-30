@@ -1,3 +1,6 @@
+#ifndef FILTER_H
+#define FILTER_H
+
 #define PI 3.1415
 
 
@@ -25,3 +28,4 @@ class Filter
     
 };
 
+#endif

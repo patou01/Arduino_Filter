@@ -45,6 +45,7 @@ void loop() {
 
 void makeSquareInput()
 {
+
   for(int i = 0; i < INPUT_LENGTH; i++)
   {
     if(i % SQUARE_FREQ < SQUARE_FREQ/2)
