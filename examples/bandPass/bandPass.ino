@@ -3,7 +3,7 @@
 #define INPUT_LENGTH 400
 #define SQUARE_FREQ 10
 
-#define LOW_FREQ 0
+#define LOW_FREQ 10
 #define HI_FREQ 100
 #define SAMP_TIME 10 // ms
 

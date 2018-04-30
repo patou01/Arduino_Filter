@@ -3,11 +3,15 @@
 #define INPUT_LENGTH 400
 #define SQUARE_FREQ 10
 
-#define DIGITS 3
 
+#define LOW_FREQ 10
+#define HI_FREQ 0
+#define SAMP_TIME 10 // ms
+
+#define DIGITS 3
 #define BAUD 115200
 
-Filter filt(10, 0, 10); 
+Filter filt(LOW_FREQ, HI_FREQ, SAMP_TIME); 
 
 float testInput[INPUT_LENGTH];
 float curInput;
