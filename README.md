@@ -18,3 +18,9 @@ Use this method to give a new datapoint to the filter, it then proceeds to calcu
 ```float getValue()```
 
 Returns the filtered output.
+
+
+# Todo
+* Benchmark velocity
+* Make examples easier to understand (give actual frequencies to the waves)
+* Documentation
