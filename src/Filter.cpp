@@ -55,12 +55,19 @@ void Filter::addData(float data_)
   prevData = data;
   data = data_;
   prevOutput = output;
-  
-  // low pass
-  output = loPassAlpha*data + (1-loPassAlpha)*output;
 
+
+  // low pass
+	if(loPassAlpha > 0.0)
+  		output = loPassAlpha*data + (1-loPassAlpha)*output;
+	else
+		output = data;
   // high pass
-  output = hiPassAlpha*output + hiPassAlpha*(data - prevData);
+	if(hiPassAlpha > 0.0 && hiPassAlpha < 1.0)
+	{
+		//prevOutput = output;
+  		output = hiPassAlpha*prevOutput + hiPassAlpha*(data - prevData);
+	}
 }
 
 float Filter::getLoPassAlpha()

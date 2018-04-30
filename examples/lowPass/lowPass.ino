@@ -1,10 +1,10 @@
 #include <Filter.h>
 
 #define INPUT_LENGTH 400
-#define SQUARE_FREQ 10
+#define SQUARE_FREQ 4
 
 #define LOW_FREQ 0
-#define HI_FREQ 100
+#define HI_FREQ 1
 #define SAMP_TIME 10 // ms
 
 #define DIGITS 3
@@ -39,7 +39,8 @@ void loop() {
   Serial.print(curInput,DIGITS); Serial.print(" ");
   Serial.println(filt.getValue(),DIGITS);
 
-  inputCounter++;
+  inputCounter = (inputCounter+1) % INPUT_LENGTH;
+  delay(SAMP_TIME-2); // saying 2ms for the rest of the loop, give or take a ms
 }
 
 void makeSquareInput()
@@ -52,6 +53,9 @@ void makeSquareInput()
     }
     else
       testInput[i] = 5;
+
+    testInput[i] += 5;
   }
+  
 } 
 
